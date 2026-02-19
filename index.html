@@ -36,27 +36,35 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
+		// This counts the allergy and cold answers
 		var allergy_count = 0;
         var cold_count = 0;
 	
+		// This function adds 1 to the allergy count
         function allergyAdd(){
 			
             allergy_count = allergy_count + 1;
 
         }
-
+	
+		// This function adds 1 to the cold count
         function coldAdd(){
             cold_count = cold_count + 1;
         }
-
+	// This function displays results
 	function showResults(){
 		
 	var total = allergy_count + cold_count;
-
+	// Calculates counts into percentages 
 	var allergyPercent = (allergy_count / total) * 100;
 	var coldPercent = (cold_count / total) * 100;
-
+		
+	/*Specifies where results will be shown 
+		"resultspercentage" is the updated paragraph ID
+	*/
 	var resultText = document.getElementById("resultspercentage");
+	
+	// <br> creates a line break between results	
 	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
 
 	}
@@ -65,7 +73,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <style>	
-.body {
+body {
      margin: 0em;
 }
 
@@ -100,7 +108,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 </div> <!-- adding this because it seems to be missing????? -->
-<!-- end of title page -->	
+	
+<!-- Question 1 Page -->		
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -108,11 +117,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     <div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p> 
-		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-pink"> Yes</a> <!Button for Yes>
-		<a href="#two" onclick="coldAdd();" class="w3-btn w3-pink"> No</a> <!Button for No>
+		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-pink"> Yes</a> <!--Button for Yes, adds to allergy-->
+		<a href="#two" onclick="coldAdd();" class="w3-btn w3-pink"> No</a> <!--Button for No, adds to cold-->
 </div>
 </div>
-<!-- end of first page -->
+<!-- Question 2 Page -->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -120,11 +129,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
-		<a href="#three" onclick="coldAdd();" class="w3-btn w3-pink"> Yes</a> <!Button for Yes>
-		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-pink"> No</a> <!Button for No>
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-pink"> Yes</a> <!--Button for Yes, adds to cold-->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-pink"> No</a> <!--Button for No, adds to allergy-->
 </div>
 </div>
-<!-- end of second page -->
+<!-- Question 3 Page -->
 	<div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
@@ -132,11 +141,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
-	    <a href="#four" onclick="coldAdd();" class="w3-btn w3-pink"> Yes</a> <!Button for Yes>
-		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-pink"> No</a> <!Button for No>
+	    <a href="#four" onclick="coldAdd();" class="w3-btn w3-pink"> Yes</a> <!--Button for Yes, adds to cold-->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-pink"> No</a> <!--Button for No, adds to allergy-->
 </div>
 </div>
-<!-- end of third page -->
+<!-- Question 4 Page -->
 	<div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
@@ -144,11 +153,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
-	    <a href="#five" onclick="allergyAdd();" class="w3-btn w3-pink"> Yes</a> <!Button for Yes>
-		<a href="#five" onclick="coldAdd();" class="w3-btn w3-pink"> No</a> <!Button for No>
+	    <a href="#five" onclick="allergyAdd();" class="w3-btn w3-pink"> Yes</a> <!--Button for Yes, adds to allergy-->
+		<a href="#five" onclick="coldAdd();" class="w3-btn w3-pink"> No</a> <!--Button for No, adds to cold-->
 </div>	
 </div>
-<!-- end of fourth page -->
+<!-- Question 5 Page -->
 	<div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
@@ -156,12 +165,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container">
 		<p> Did your symptoms come suddenly? </p>
-	    <a href="#six" onclick="allergyAdd();" class="w3-btn w3-pink"> Yes</a> <!Button for Yes>
-		<a href="#six" onclick="coldAdd();" class="w3-btn w3-pink"> No</a> <!Button for No>
+	    <a href="#six" onclick="allergyAdd();" class="w3-btn w3-pink"> Yes</a> <!--Button for Yes, adds to allergy-->
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-pink"> No</a> <!--Button for No, adds to cold-->
 </div>	
 </div>
-<!-- end of fifth page -->
-	
+<!-- Question 6 Page -->
 	<div class="page" id="six">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 6</h1>
@@ -169,11 +177,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container">
 		<p> Do you have thick, colored mucus? </p>
-	    <a href="#results" onclick="coldAdd(); showResults();" class="w3-btn w3-pink"> Yes</a> <!Button for Yes>
-		<a href="#results" onclick="allergyAdd(); showResults();" class="w3-btn w3-pink"> No</a> <!Button for No>
+	    <a href="#results" onclick="coldAdd(); showResults();" class="w3-btn w3-pink"> Yes</a> <!--Button for Yes, adds to cold-->
+		<a href="#results" onclick="allergyAdd(); showResults();" class="w3-btn w3-pink"> No</a> <!--Button for No, adds to allergy-->
 </div>	
 </div>
-<!-- end of sixth page -->
+	
+<!-- Results Page -->
 
 
 	<div class="page" id="results">
@@ -182,7 +191,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 
 		<div id="content" class="w3-container">
-			<p id="resultspercentage"></p>
+			<p id="resultspercentage"></p> <!--id address has to be different from title-->
 </div>
 </div>
 
