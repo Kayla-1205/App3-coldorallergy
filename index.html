@@ -59,13 +59,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var allergyPercent = (allergy_count / total) * 100;
 	var coldPercent = (cold_count / total) * 100;
 		
-	/*Specifies where results will be shown 
+	/* Specifies where results will be shown 
 		"resultspercentage" is the updated paragraph ID
 	*/
 	var resultText = document.getElementById("resultspercentage");
 	
-	// <br> creates a line break between results	
-	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+	/* This is the text shown in the results
+	<br> creates a line break between results
+	*/
+	resultText.innerHTML =
+		"Probability it is allergies =" + allergyPercent + "%<br>" +
+		"Probability it is a cold =" + coldPercent + "%"; 
 
 	}
   </script>
@@ -75,6 +79,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <style>	
 body {
      margin: 0em;
+	text-align: center; /*This will center all texts and functions*/
 }
 
 .page {
